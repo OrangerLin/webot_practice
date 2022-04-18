@@ -1,0 +1,564 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        2
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.11727388412605899 0.9587641251454976 0.2588787137560302 2.964187684374297
+  position 0.6846852925140873 1.359951424862361 -1.909368392896273
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF robot Robot {
+  translation 0.0841911 0.429544 0.0157482
+  rotation -0.5333353795798881 0.7763804225051567 0.3358374792054794 -0.05042830066931287
+  children [
+    DEF body Solid {
+      children [
+        DEF body Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.5 0.1 0.38
+          }
+        }
+      ]
+      name "body"
+      boundingObject DEF body Shape {
+        appearance PBRAppearance {
+        }
+        geometry Box {
+          size 0.5 0.1 0.38
+        }
+      }
+      physics Physics {
+        density -1
+        mass 30
+      }
+    }
+    DEF fore_right_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position -7.902321264245702e-09
+        axis 0 0 1
+        anchor 0.25 0 0.15
+      }
+      device [
+        RotationalMotor {
+          name "fore_right_1"
+          controlPID 10 0.2 0.2
+          maxVelocity 50
+          maxTorque 102
+        }
+      ]
+      endPoint Solid {
+        translation 0.24084929718339776 -0.004008146954793424 0.20010631578599497
+        rotation 0.5773109617138038 -0.5782104382014471 -0.5765281802652614 2.094279885117768
+        children [
+          DEF servo_shape Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+          DEF leg1 Transform {
+            translation 0 0 0.087
+            rotation 1 0 0 -1.5707996938995747
+            children [
+              DEF leg1 Solid {
+                children [
+                  DEF leg1 Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Box {
+                      size 0.04 0.174 0.02
+                    }
+                  }
+                ]
+                boundingObject DEF leg1 Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.04 0.174 0.02
+                  }
+                }
+                physics Physics {
+                }
+              }
+            ]
+          }
+          DEF fore_right_2 HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.123393840175715e-09
+              axis 0 1 0
+              anchor 0 0 0.174
+            }
+            device [
+              RotationalMotor {
+                name "fore_right_2"
+                controlPID 10 0.2 0.2
+                maxVelocity 50
+                maxTorque 102
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.174
+              rotation 0 -1 0 3.1415853071795854
+              children [
+                USE servo_shape
+                Transform {
+                  translation 0 0 0.08
+                  rotation 1 0 0 -1.5707996938995747
+                  children [
+                    DEF leg1 Solid {
+                      children [
+                        DEF leg1 Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Box {
+                            size 0.04 0.174 0.02
+                          }
+                        }
+                      ]
+                      name "solid(1)"
+                      boundingObject DEF leg1 Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Box {
+                          size 0.04 0.174 0.02
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF leg1 Transform {
+                      translation 0 0 0.087
+                      rotation 1 0 0 -1.5707996938995747
+                      children [
+                        Solid {
+                        }
+                      ]
+                    }
+                  ]
+                }
+                TouchSensor {
+                  translation -0.0004047174786559471 -1.7523163339805414e-07 0.1624825673841455
+                  rotation -0.33506143079639855 0.9280322447688686 -0.1627574583910827 4.1699732859212345e-08
+                  children [
+                    USE servo_shape
+                  ]
+                  boundingObject USE servo_shape
+                  physics Physics {
+                  }
+                }
+              ]
+              name "solid(1)"
+              boundingObject USE servo_shape
+              physics Physics {
+              }
+            }
+          }
+        ]
+        boundingObject USE servo_shape
+        physics Physics {
+        }
+      }
+    }
+    DEF fore_left_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 9.645248510454581e-09
+        axis 0 0 1
+        anchor 0.25 0 -0.15
+      }
+      device [
+        DEF fore_left_1 RotationalMotor {
+          name "fore_left_1"
+          controlPID 10 0.2 0.2
+          maxVelocity 50
+          maxTorque 102
+        }
+      ]
+      endPoint Solid {
+        translation 0.24063631156765472 -0.003958131285271626 -0.20022312241739643
+        rotation 0.57733187251657 -0.5782007674530666 -0.5765169394676932 2.0943448717182775
+        children [
+          DEF servo_shape Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+          DEF leg1 Transform {
+            translation 0 0 0.087
+            rotation 1 0 0 -1.5707996938995747
+            children [
+              DEF leg1 Solid {
+                children [
+                  DEF leg1 Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Box {
+                      size 0.04 0.174 0.02
+                    }
+                  }
+                ]
+                boundingObject DEF leg1 Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.04 0.174 0.02
+                  }
+                }
+                physics Physics {
+                }
+              }
+            ]
+          }
+          DEF fore_right_2 HingeJoint {
+            jointParameters HingeJointParameters {
+              position -6.074919695066294e-05
+              axis 0 1 0
+              anchor 0 0 0.174
+            }
+            device [
+              RotationalMotor {
+                name "fore_left_2"
+                controlPID 10 0.2 0.2
+                maxVelocity 50
+                maxTorque 102
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.174
+              rotation 0 -1 0 3.141585307179583
+              children [
+                USE servo_shape
+                Transform {
+                  translation 0 0 0.08
+                  rotation 1 0 0 -1.5707996938995747
+                  children [
+                    DEF leg1 Solid {
+                      children [
+                        DEF leg1 Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Box {
+                            size 0.04 0.174 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF leg1 Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Box {
+                          size 0.04 0.174 0.02
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                  ]
+                }
+                TouchSensor {
+                  translation 0.0004045082527330268 1.759798896883158e-07 0.162482267826223
+                  rotation 0.42843076861251006 0.827618362937499 -0.3626222853531595 4.6851294708887616e-09
+                  children [
+                    USE servo_shape
+                  ]
+                  boundingObject USE servo_shape
+                  physics Physics {
+                  }
+                }
+              ]
+              name "solid(1)"
+              boundingObject USE servo_shape
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE servo_shape
+        physics Physics {
+        }
+      }
+    }
+    DEF hind_left_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position -8.105019294310594e-09
+        axis 0 0 1
+        anchor -0.25 0 -0.15
+      }
+      device [
+        DEF fore_left_1 RotationalMotor {
+          name "hind_left_1"
+          controlPID 10 0.2 0.2
+          maxVelocity 50
+          maxTorque 102
+        }
+      ]
+      endPoint Solid {
+        translation -0.2625515496712926 0.005049565864857701 -0.20032982779475317
+        rotation 0.5773360209891027 -0.5782041206016476 -0.5765094221153247 2.0943588627710876
+        children [
+          DEF servo_shape Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+          DEF leg1 Transform {
+            translation 0 0 0.087
+            rotation 1 0 0 -1.5707996938995747
+            children [
+              DEF leg1 Solid {
+                children [
+                  DEF leg1 Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Box {
+                      size 0.04 0.174 0.02
+                    }
+                  }
+                ]
+                boundingObject DEF leg1 Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.04 0.174 0.02
+                  }
+                }
+                physics Physics {
+                }
+              }
+            ]
+          }
+          DEF fore_right_2 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 6.074812852623068e-05
+              axis 0 1 0
+              anchor 0 0 0.174
+            }
+            device [
+              RotationalMotor {
+                name "hind_left_2"
+                controlPID 10 0.2 0.2
+                maxVelocity 50
+                maxTorque 102
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.174
+              rotation 0 -1 0 3.141585307179589
+              children [
+                USE servo_shape
+                Transform {
+                  translation 0 0 0.08
+                  rotation 1 0 0 -1.5707996938995747
+                  children [
+                    DEF leg1 Solid {
+                      children [
+                        DEF leg1 Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Box {
+                            size 0.04 0.174 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF leg1 Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Box {
+                          size 0.04 0.174 0.02
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                  ]
+                }
+                TouchSensor {
+                  translation -0.00040463243677507643 8.1121575568055e-09 0.1624823893604224
+                  rotation -0.05880806526814086 0.9597884535643157 -0.27449542047917164 -2.144653232202383e-08
+                  children [
+                    USE servo_shape
+                  ]
+                  boundingObject USE servo_shape
+                  physics Physics {
+                  }
+                }
+              ]
+              name "solid(1)"
+              boundingObject USE servo_shape
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE servo_shape
+        physics Physics {
+        }
+      }
+    }
+    DEF hind_right_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position -8.7019595672998e-09
+        axis 0 0 1
+        anchor -0.25 0 0.15
+      }
+      device [
+        DEF fore_left_1 RotationalMotor {
+          name "hind_right_1"
+          controlPID 10 0.2 0.2
+          maxVelocity 50
+          maxTorque 102
+        }
+      ]
+      endPoint Solid {
+        translation -0.2625561338071106 0.004964827166044706 0.19993969732236266
+        rotation 0.5773154661418527 -0.5782062823163623 -0.5765278377002331 2.094288673740608
+        children [
+          DEF servo_shape Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+          DEF leg1 Transform {
+            translation 0 0 0.087
+            rotation 1 0 0 -1.5707996938995747
+            children [
+              DEF leg1 Solid {
+                children [
+                  DEF leg1 Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Box {
+                      size 0.04 0.174 0.02
+                    }
+                  }
+                ]
+                boundingObject DEF leg1 Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.04 0.174 0.02
+                  }
+                }
+                physics Physics {
+                }
+              }
+            ]
+          }
+          DEF fore_right_2 HingeJoint {
+            jointParameters HingeJointParameters {
+              position -6.074973295154551e-05
+              axis 0 1 0
+              anchor 0 0 0.174
+            }
+            device [
+              RotationalMotor {
+                name "hind_right_2"
+                controlPID 10 0.2 0.2
+                maxVelocity 50
+                maxTorque 102
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 0.174
+              rotation 0 -1 0 3.1415853071795903
+              children [
+                USE servo_shape
+                Transform {
+                  translation 0 0 0.08
+                  rotation 1 0 0 -1.5707996938995747
+                  children [
+                    DEF leg1 Solid {
+                      children [
+                        DEF leg1 Shape {
+                          appearance PBRAppearance {
+                          }
+                          geometry Box {
+                            size 0.04 0.174 0.02
+                          }
+                        }
+                      ]
+                      boundingObject DEF leg1 Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Box {
+                          size 0.04 0.174 0.02
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                  ]
+                }
+                TouchSensor {
+                  translation 0.0004044963588814565 1.1761814439070761e-08 0.1624822631877795
+                  rotation 0.13445056270772335 0.9495441911050362 -0.283352916565648 -1.838854008044172e-08
+                  children [
+                    USE servo_shape
+                  ]
+                  boundingObject USE servo_shape
+                  physics Physics {
+                  }
+                }
+              ]
+              name "solid(1)"
+              boundingObject USE servo_shape
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE servo_shape
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject DEF body Shape {
+    appearance PBRAppearance {
+    }
+    geometry Box {
+      size 0.54 0.01 0.29
+    }
+  }
+  physics Physics {
+  }
+  controller "my_controller"
+}
+WoodenBox {
+  translation 0.004011091359825462 0.21284211521560695 0.005296475897143071
+  rotation 0.8029489178292563 0.0038933245917286536 -0.5960351309951871 0.031088315782159114
+  size 0.3 0.4 0.3
+  mass 1
+}
+Ramp30deg {
+  translation 4 0 0.09
+}
+ThreeSteps {
+  translation 7.93 0.4 -0.0100089
+  rotation 0 1 0 1.5708
+}
+Floor {
+}
